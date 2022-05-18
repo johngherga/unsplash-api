@@ -22,11 +22,11 @@ namespace UnsplashAPI.rest
 
         // Manually save random image from unsplash api
         [FunctionName("SaveImage")]
-        public static async Task SaveImage(
+        public static async Task<ImageDTO> SaveImage(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "image/save")] HttpRequest request,
             ILogger logger)
         {
-            await ImageService.SaveRandomImage(logger);
+            return await ImageService.SaveRandomImage(logger);
         }
 
         // Get image from Azure Table Storage with image id and user id

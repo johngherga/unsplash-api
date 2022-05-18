@@ -21,7 +21,7 @@ namespace UnsplashAPI.service
             return MapEntityToDTO(imageEntity);
         }
 
-        public static async Task SaveRandomImage(ILogger logger)
+        public static async Task<ImageDTO> SaveRandomImage(ILogger logger)
         {
             logger.LogInformation($"Getting image from unsplash API.");
 
@@ -60,6 +60,7 @@ namespace UnsplashAPI.service
             logger.LogInformation($"TenDayDownloads: {imageStatResponse.Downloads.Historical.Change}");
             logger.LogInformation($"PercentOfTotalDownloads: {CalculatePercentage(imageStatResponse.Downloads.Historical.Change, imageResponse.Downloads)}");
 
+            return MapEntityToDTO(imageEntity);
         }
 
         private static async Task<ImageStatResponse> GetImageStatistics(string imageId, ILogger logger)
