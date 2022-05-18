@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UnsplashAPI.models.image
+namespace UnsplashAPI.models.dto
 {
     public class ImageDTO
     {

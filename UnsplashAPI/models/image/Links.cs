@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace UnsplashAPI.models.image.response
+namespace UnsplashAPI.models.image
 {
     public class Links
     {
